@@ -6,7 +6,7 @@
     <div class="link-group">
       <router-link class="link" v-if="this.$store.state.auth.authorize === true" to="/home_page">Домашняя страница</router-link>
       <a class="link">О нас (в разработке)</a>
-      <a class="link">Расписание (в разработке)</a>
+      <router-link class="link" to="/time-sheet">Расписание (в разработке)</router-link>
     </div>
     <div v-if="this.$store.state.auth.authorize === false">
       <router-link class="link" to="/login">Вход</router-link>

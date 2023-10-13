@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import HomeView from '../views/HomeView.vue'
 import LoginForm from "@/components/LoginForm";
+import TimeSheet from "@/components/TimeSheet";
 // import MainViev from "@/views/MainView";
 
 const routes = [
@@ -35,6 +36,14 @@ const routes = [
     path: '/home_page',
     name: 'home_page',
     component: () => import('../views/HomePage'),
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: '/time-sheet',
+    name: 'time-sheet',
+    component: TimeSheet,
     meta: {
       requiresAuth: false
     }

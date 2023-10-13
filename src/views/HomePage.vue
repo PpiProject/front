@@ -32,21 +32,21 @@ export default {
         case "Администратор":
           nameComponent = 'AdminMenu'
           break;
-        case "Модератор":
-          nameComponent = 'ModeratorMenu'
-          break;
-        case "Перподаватель":
-          nameComponent = 'TeacherMenu'
-          break;
-        case "Специалист":
-          nameComponent = 'SpecialMenu'
-          break;
-        case "Студент":
-          nameComponent = 'StudentMenu'
-          break
-        default:
-          nameComponent = 'GuestMenu'
-          break;
+        // case "Модератор":
+        //   nameComponent = 'ModeratorMenu'
+        //   break;
+        // case "Перподаватель":
+        //   nameComponent = 'TeacherMenu'
+        //   break;
+        // case "Специалист":
+        //   nameComponent = 'SpecialMenu'
+        //   break;
+        // case "Студент":
+        //   nameComponent = 'StudentMenu'
+        //   break
+        // default:
+        //   nameComponent = 'GuestMenu'
+        //   break;
       }
 
       return defineAsyncComponent(() => import(`@/views/menu_items/${nameComponent}`))

@@ -1,31 +1,14 @@
 <template>
     <div class="obertka">
-      <img class="imgBanner" src="../assets/fon3.png">
+
     </div>
 </template>
-
-<script>
-  import {mapState} from "vuex";
-  import router from "@/router";
-
-  export default {
-    computed:{
-      ...mapState('auth',['state']),
-    },
-
-    created() {
-      if (this.$store.state.auth.authorize === false){
-        router.push({name: 'login'})
-      }
-    },
-  }
-</script>
 
 <style>
 
 .obertka{
   position: relative;
-
+  height: auto;
 }
 
 .imgBanner{
@@ -33,7 +16,7 @@
   left: 0;
   top: 0;
   width: 100%;
-  height: auto;
+  height: 615px;
 }
   .header-main{
     text-align: center;

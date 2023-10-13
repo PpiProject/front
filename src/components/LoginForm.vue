@@ -1,14 +1,15 @@
 <template>
   <div class="login-page">
-    <div class="obertka">
-      <form @submit.prevent = "onsubmit" class="form_registration" method="post">
-          <div class="headerLogin"> Вход на портал ППИ</div>
-          <input type="text" name="login" v-model="login" placeholder="Логин">
-          <input type="password" name="password"  v-model="password" placeholder="Пароль">
-            <button class="btnLogin" @click="test">Войти</button>
-      </form>
-      </div>
+    <form @submit.prevent = "onsubmit" class="form_registration" method="post">
+      <div class="headerLogin"> Вход на портал ППИ</div>
+      <input type="text" name="login" v-model="login" placeholder="Логин">
+      <input type="password" name="password"  v-model="password" placeholder="Пароль">
+      <button class="btnLogin" @click="test">
+        Войти
+      </button>
+    </form>
   </div>
+
 </template>
 
 <script>
@@ -47,7 +48,7 @@ export default {
       const loginUser = await getUser(dataJSon);
 
       console.log(loginUser)
-      if (loginUser.data.length !== 0 ){
+      if (loginUser.data !== 0 ){
         let dataAuth = {
           user: `${loginUser.data.last_name} ${loginUser.data.first_name}`,
           token: loginUser.data.token,
@@ -66,16 +67,10 @@ export default {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap');
-.login-page{
-  height: 90vh;
-  /*height: 615px;*/
-  /*background-image: url("../assets/banner7.png");*/
-  /*background-size: cover;*/
-}
 
-.obertka{
+.login-page{
+  background-color: #036008;
   height: 100vh;
-  background-image: url("../assets/fon3.png");
 }
 
 .headerLogin{
@@ -86,21 +81,17 @@ export default {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #858585;
+  color: #727272;
 }
 
 .form_registration{
-  margin-top: 3rem;
-  width: 300px;
-  height: 250px;
+  position: absolute;
+  width: 522px;
+  height: 200px;
   background-color: #efeeee;
+  margin-top: 150px;
   border-radius: 25px;
-  padding: 50px;
-  position:absolute; top: 50%; left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-
+  left: 33%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -127,5 +118,9 @@ export default {
   text-transform: uppercase;
   color: white;
 }
-
+.login-page{
+  /*height: 615px;*/
+  /*background-image: url("../assets/banner7.png");*/
+  /*background-size: cover;*/
+}
 </style>
